@@ -1,0 +1,14 @@
+language: cpp
+
+addons:
+  apt:
+    packages:
+      - libfftw3-dev
+      - gfortran
+
+script:
+  - mkdir build && pushd build &&
+    cmake ../source &&
+    make -k -j2 VERBOSE=1 &&
+    popd
+
